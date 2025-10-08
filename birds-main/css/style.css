@@ -10,22 +10,21 @@ p {
 a,
 a:visited {
     font-size: 16px;
-    color: #B21F50; 
+    color: #C12258; /* change from #B21F50 if contrast is failing */
     text-decoration-line: underline;
     text-decoration-style: wavy;
-    text-decoration-color: #B21F50;
-    -webkit-text-decoration-color: #B21F50; 
-   
+    text-decoration-color: #C12258;
+    -webkit-text-decoration-color: #C12258; 
     text-underline-offset: 2px;
 }
   
 
-a:hover,
+/* a:hover,
 a:focus {
     text-decoration-style: solid; 
     outline: 2px solid transparent; 
     outline-offset: 2px;
-}
+} */
   
 
 *:focus {
@@ -55,7 +54,7 @@ td {
     padding: 10px;
 }
 
-th {
+thead th{
     min-width: 125px;   
     padding: 10px;
     text-transform: uppercase; 
@@ -67,18 +66,13 @@ th {
   
 tbody th {
     border: 2px solid black; 
-    border-top: none;     
-    border-right: none;
-    border-left: none;
+    border-top-width: 0px; 
     padding: 10px;
     text-align: center;
 }
   
  
-tr:hover {
-    background: #7e0820;
-    opacity: 0.25;  
-}
+
   
 tr:nth-child(even) {
     background-color: #D1D1D1;
@@ -87,6 +81,10 @@ tr:nth-child(odd) {
     background-color: transparent;
 }
 
+tr:hover {
+    background: #7e0820;
+    opacity: 0.50;  
+}
 
 table {
     border-spacing: 0;
@@ -96,20 +94,21 @@ table {
     border-radius: 20px;
     overflow: hidden; 
 }
-  
- 
-  table tr:first-child th:first-child {
+
+/* ONLY outer corners get rounded */
+thead th:first-child {
     border-top-left-radius: 20px;
-  }
-  table tr:first-child th:last-child {
+}
+thead th:last-child {
     border-top-right-radius: 20px;
-  }
-  table tr:last-child td:first-child {
+}
+tbody tr:last-child th:first-child {
     border-bottom-left-radius: 20px;
-  }
-  table tr:last-child td:last-child {
+}
+tbody tr:last-child th:last-child {
     border-bottom-right-radius: 20px;
-  }
+}
+
   
   
   
